@@ -1,4 +1,5 @@
 // server.js - Main server file for the MERN blog application
+require('dotenv').config();
 
 // Import required modules
 const express = require('express');
@@ -56,7 +57,7 @@ app.use((err, req, res, next) => {
 
 // Connect to MongoDB and start server
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {
